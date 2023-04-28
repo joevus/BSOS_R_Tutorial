@@ -37,6 +37,26 @@ library(htmltools)
             class="list-group-item",
             "Tutorials: rtutorial4",
             href="Tutorials/rtutorial4"
+          ),
+          a(
+            class="list-group-item",
+            "PSYC: R Dataset Cleaning",
+            href="PSYC_Tutorials/R Dataset Cleaning/"
+          ),
+          a(
+            class="list-group-item",
+            "PSYC: R Functions",
+            href="PSYC_Tutorials/R Functions/"
+          ),
+          a(
+            class="list-group-item",
+            "PSYC: R Subsetting",
+            href="PSYC_Tutorials/R Subsetting/"
+          ),
+          a(
+            class="list-group-item",
+            "PSYC: Vectors",
+            href="PSYC_Tutorials/R Vectors/"
           )
         ),
       ),
