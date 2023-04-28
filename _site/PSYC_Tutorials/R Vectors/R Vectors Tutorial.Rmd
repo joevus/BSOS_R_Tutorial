@@ -51,13 +51,13 @@ RStudio is the most commonly used integrated development environment (IDE) for R
 
 ### Four Windows
 
-![Figure 1: The RStudio environment](D:/BSOS_R_Tutorial/PSYC_Tutorials/images_folder/rstudio_env.jpg){#id .class width=700 height=445px}
+![Figure 1: The RStudio environment](../images_folder/rstudio_env.jpg){#id .class width=700 height=445px}
 
 ## What is a Code Block?
 
 Below is a picture of code block in R markdown.
 
-![Figure2: Code Block](D:/BSOS_R_Tutorial/PSYC_Tutorials/images_folder/code_block.jpg)
+![Figure2: Code Block](../images_folder/code_block.jpg)
 
 
 - When you use a r-markdown file, you can write your code in a code block which is usually a grey space created inside the markdown file.
@@ -295,4 +295,18 @@ sentence2
 
 ```{r exercise5-code-check}
 grade_code()
+```
+
+### Submitting work
+
+```{r submission-setup}
+submission_code <- function(UID){
+  httr::sha1_hash('R-vectors',as.character(UID))
+}
+```
+
+Generate your submission code by putting in your UID in the function below. For example, if your UID is `2`, then your code should look like `submission_code(UID = 2)`
+```{r submission, exercise = TRUE}
+# Replace the number below with your UID
+submission_code(2)
 ```
