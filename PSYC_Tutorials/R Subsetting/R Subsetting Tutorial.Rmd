@@ -33,7 +33,7 @@ In this module, we will learn some basic data set operations.
 ### Opening/loading Data set
 
 ```{r echo=TRUE}
-dat.org <- read.csv("D:/BSOS_R_Tutorial/PSYC_Tutorials/data_psych/STAT200_Data_Update_4.8.csv")
+dat.org <- read.csv("../data_psych/STAT200_Data_Update_4.8.csv")
 dat.work <- dat.org
 
 #Note: Make sure you are using readxl instead of readx1

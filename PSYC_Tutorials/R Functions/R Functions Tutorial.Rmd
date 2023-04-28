@@ -113,8 +113,7 @@ Datasets can be in different formats. The most common forms are 'xlsx' and 'csv.
 # This is an example -- you will need to change the text inside parenthesis to the place where the data file is located ON YOUR OWN COMPUTER
 # The most common format to run such functions are read_xlsx("file path in local computer")
 
-Excel.dat.orginal <- read_xlsx("STAT200 Data.xlsx")
-Excel.dat.orginal <- read_xlsx("../data_psych/STAT200_Data.xlsx")
+Excel.dat.orginal <- read_xlsx("../data_psych/STAT200_Data_Update_4.8_original.xlsx")
 
 Excel.dat.working <- Excel.dat.orginal
 
@@ -124,8 +123,7 @@ Excel.dat.working
 Opening CSV Dataset
 
 ```{r echo=TRUE,eval=FALSE}
-CSV.dat.orginal <- read.csv("STAT200 Data_csv.csv")
-CSV.dat.orginal <- read.csv("../data_psych/STAT200 Data.csv")
+CSV.dat.orginal <- read.csv("../data_psych/STAT200_Data_Update_4.8_original.csv")
 
 CSV.dat.working <- CSV.dat.orginal
 

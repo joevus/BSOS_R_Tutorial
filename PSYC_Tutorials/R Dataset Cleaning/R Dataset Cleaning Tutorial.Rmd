@@ -34,7 +34,7 @@ This tutorial mainly focuses on an overall summary of what you learnt so far and
 - Remember to load the package `readxl` in your local environment before reading a .xlsx file.
 
 ```{r}
-data.original1 <- read_xlsx("D:/BSOS_R_Tutorial/PSYC_Tutorials/data_psych/STAT200_Data_Update_4.8_original.xlsx")
+data.original1 <- read_xlsx("../data_psych/STAT200_Data_Update_4.8_original.xlsx")
 data.working <- data.original1
 ```
 
