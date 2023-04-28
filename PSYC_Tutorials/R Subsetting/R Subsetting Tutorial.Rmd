@@ -57,7 +57,7 @@ head(dat.work) #see first few rows
 tail(dat.work) #see last few rows
 
 #View
-View(dat.work) #View entire dataset
+# View(dat.work) #View entire dataset
 ```
 
 
