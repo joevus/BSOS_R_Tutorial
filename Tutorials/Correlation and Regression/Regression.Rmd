@@ -95,7 +95,7 @@ cor(swiss$Infant.Mortality,swiss$Fertility, method = 'pearson')
 
 ## Regression
 
-###
+### {data-allow-skip=TRUE}
 Before starting the module, if you need a review on the concepts of regression, feel free to watch the video. ![Linear Regression](https://www.youtube.com/watch?v=i032e6OGzUA)
 
 We'll start by looking at the relationship between fertility measures and the proportion of people having education beyond primary level.
