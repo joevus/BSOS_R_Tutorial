@@ -35,8 +35,8 @@ library(htmltools)
           ),
           a(
             class="list-group-item",
-            "Tutorials: rtutorial4",
-            href="Tutorials/rtutorial4"
+            "Tutorials: Correlation and Regression",
+            href="Tutorials/Correlation and Regression"
           ),
           a(
             class="list-group-item",
