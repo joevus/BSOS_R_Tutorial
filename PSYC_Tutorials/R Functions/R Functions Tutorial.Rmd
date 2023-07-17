@@ -3,6 +3,7 @@ title: "Data sets in R"
 output: 
   learnr::tutorial:
     progressive: true
+    allow_skip : true
 runtime: shiny_prerendered
 tutorial:
   id: "R-functions"
@@ -13,7 +14,7 @@ tutorial:
 library(MASS)
 library(learnr)
 library(gradethis)
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 knitr::opts_chunk$set(exercise.checker = gradethis::grade_learnr)
 learnr::tutorial_options(
   exercise.timelimit = 60)
@@ -69,7 +70,7 @@ dat.working2
 
 1. Try to write the code for the following task.
 - Load the package "MASS".
-- Load the data set `survey` and save it as `dat.survey` in R.
+- Load the data set `survey`.
 
 ```{r code_sandbox, exercise=TRUE, exercise.cap="datasets"}
 ```
@@ -218,6 +219,30 @@ describe.by(Excel.dat.working, Excel.dat.working$`Note Taking Modality (paper =1
 ```
 
 *Note: More information provided [here](https://www.rdocumentation.org/packages/psych/versions/2.0.12/topics/describeBy)*
+
+### Try it!!
+
+1. Use the survey data set you loaded before, `survey` and write the code for finding out the summary of `height` of students.
+
+```{r ex1, exercise=TRUE, echo = -1}
+library(psych)
+
+```
+
+<div id = "ex1-hint">
+**Hint:** Refer to the "More Dataset Functions" section for help. Think about the way you can access a specific column from the data set. 
+</div>
+
+2. How will you modify the code in question 1 to find the summary of `height` of the students for males and females?
+
+```{r ex2, exercise = TRUE}
+
+```
+
+<div id = "ex2-hint">
+**Hint:** Refer to the "More Dataset Functions" section for help, and look through the given code to find the appropriate function.
+</div>
+
 
 ### Submitting work
 
