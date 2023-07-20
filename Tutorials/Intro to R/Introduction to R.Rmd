@@ -3,6 +3,7 @@ title: "Introduction to R"
 output: 
   learnr::tutorial:
     progressive: true
+    allow_skip: true
 runtime: shiny_prerendered
 tutorial:
   id: "intro-r"
@@ -13,7 +14,7 @@ tutorial:
 library(MASS)
 library(learnr)
 library(gradethis)
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 knitr::opts_chunk$set(exercise.checker = gradethis::grade_learnr)
 learnr::tutorial_options(
   exercise.timelimit = 60)
@@ -231,19 +232,14 @@ grade_result(
 
 ### Exercise 2
 
-What is the sum of all even numbers between 2 and 100, inclusive?
+What is the sum of the first 5 natural numbers?
 
 ```{r exercise2, exercise = TRUE}
 ```
 
-<div id="exercise2-hint">
-**Hint:** How would you get a vector of all even numbers between 2 and 100? How would you sum them up?
-</div>
-
-
 ```{r exercise2-check}
 grade_result(
-  pass_if(~ identical(.result, sum(2*(1:50))), "Good Job!"),
+  pass_if(~ identical(.result, sum(1:5)), "Good Job!"),
   fail_if(~ TRUE)
 )
 ```
