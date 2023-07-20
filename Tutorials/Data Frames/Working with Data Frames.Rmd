@@ -3,6 +3,7 @@ title: "Working with Data Frames"
 output: 
   learnr::tutorial:
     progressive: true
+    allow_skip: true
 runtime: shiny_prerendered
 tutorial:
   id: "data-frames"
@@ -13,7 +14,7 @@ tutorial:
 library(learnr)
 library(gradethis)
 library(MASS)
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 knitr::opts_chunk$set(exercise.checker = gradethis::grade_learnr)
 learnr::tutorial_options(
   exercise.timelimit = 60)
@@ -85,6 +86,10 @@ Suppose we wanted to look at the horsepower of the first car in the data frame? 
 ```{r accessing_values, exercise = TRUE}
 ```
 
+<div id = "accessing_values-hint">
+**Hint:** For a clue, revisit the previous example code!
+</div>
+
 ```{r accessing_values-check}
 grade_result(
   pass_if(~ identical(.result, mtcars[1,'hp']), "Good job!"),
@@ -111,6 +116,7 @@ If you want to look at multiple columns, we can do that by including a vector of
 mtcars[1:10, 2:4] # For columns 2 to 4
 mtcars[1:10, c("cyl","disp","hp")] # This does the same thing
 ```
+
 ## Creating Subsets of the Data
 
 Many times, especially with larger datasets, you'll want to only look at certain portions of the data. We can subset our dataset by indicating which rows we want. We do this using a vector of boolean values with `TRUE` whenever it's a row that we want and `FALSE` whenever it's a row we don't want. This vector should have a length equal to the number of rows in the data frame. To get this vector, we can just use a logical operator. For example, consider the following code, which looks at the `vs` variable, which is 0 if the car doesn't have a v-shaped engine, and 1 if it does have a v-shaped engine.
@@ -209,6 +215,11 @@ How would you subset the dataset to only flowers from the species **virginica**?
 ```{r exercise3, echo = TRUE, exercise = TRUE}
 ```
 
+<div id = "exercise3-hint">
+**Hint:** For help, revisit the subsection "creating subsets of the data".
+</div>
+
+
 ```{r exercise3-check}
 grade_result(
   pass_if(~ identical(.result, iris[iris$Species == "virginica",]), "Good job!"),
@@ -223,6 +234,10 @@ How would you subset the dataset to only include the flowers with petal length m
 
 ```{r exercise4, echo = TRUE, exercise = TRUE}
 ```
+
+<div id = "exercise4-hint">
+**Hint:** For help, revisit the subsection "creating subsets of the data".
+</div>
 
 ```{r exercise4-check}
 grade_result(
