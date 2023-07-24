@@ -3,6 +3,7 @@ title: "ANOVA"
 output: 
   learnr::tutorial:
     progressive: true
+    allow_skip: true
 runtime: shiny_prerendered
 tutorial:
   id: "anova"
@@ -17,7 +18,7 @@ library(gradethis)
 library(ggplot2)
 library(datasets)
 knitr::opts_chunk$set(exercise.checker = gradethis::grade_learnr)
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 learnr::tutorial_options(
   exercise.timelimit = 60)
 ```
@@ -191,6 +192,10 @@ How would you run an ANOVA to determine whether there is a relationship between 
 ```{r exercise1, exercise=TRUE}
 ```
 
+<div id = "exercise1-hint">
+**Hint:** Not sure how to do it? No worries, refer back to "Using 'aov()' subsection"!
+</div>
+
 ```{r exercise1-check}
 grade_result(
   pass_if(~ identical(.result, summary(aov( breaks~factor(wool), data = warpbreaks))), "Good Job!"),
@@ -238,6 +243,10 @@ How would you run an ANOVA to determine whether there is a difference between th
 
 ```{r exercise4, exercise=TRUE}
 ```
+
+<div id = "exercise4-hint">
+**Hint:** Remember how we included interaction in a model? What should we use on the right hand side, + or * ?
+</div>
 
 ```{r exercise4-check}
 grade_result(
