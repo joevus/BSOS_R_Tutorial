@@ -3,6 +3,7 @@ title: "Subsetting in R"
 output: 
   learnr::tutorial:
     progressive: true
+    allow_skip: true
 runtime: shiny_prerendered
 tutorial:
   id: "R-subsetting"
@@ -123,6 +124,7 @@ dat.work[1:3, 1:3]
 
 2. Choose the correct one.
 
+
 ```{r question1}
 question("To extract the solar radiation amounts in the air, which of the following ways can be used?",
          answer("airquality$Solar.R", correct=TRUE, message = "Good job!"),
@@ -132,6 +134,10 @@ question("To extract the solar radiation amounts in the air, which of the follow
          random_answer_order = TRUE
 )
 ```
+
+<div id = "question1-hint">
+**Hint :** In case you need to revisit the materials, refer to the subsection 'Extracting Specific Variables'.
+</div>
 
 ```{r question2}
 learnr::question("How can you extract the values of first 3 variables for the first 3 cases?",
@@ -143,6 +149,9 @@ learnr::question("How can you extract the values of first 3 variables for the fi
 )
 ```
 
+<div id = "question2-hint">
+**Hint :** In case you need to revisit the materials, refer to the subsection 'Selecting specific variables and rows in a dataset'.
+</div>
 ###
 
 ## Section Two : Extracting & Building Vectors / Dataframes
@@ -232,6 +241,10 @@ Use the pre-loaded data set on airquality for this exercises.
 1. Create a vector that subtracts 78 from each of the values of the variable `Temp`. Divide this new vector by 9. Store the resulting vector as `std_temp`.
 
 ```{r q3, exercise = TRUE}
+```
+
+```{r q3-hint}
+std_temp <- (variable-78)/9
 ```
 
 ```{r q3-check}
@@ -474,6 +487,10 @@ grade_result(
 ```{r q5, exercise=TRUE}
 ```
 
+<div id= "q5-hint">
+**Hint:** Refer to 'Other Logical Operators-- Equal to/Not equal to' for a refresher!
+</div>
+
 ```{r q5-check}
 grade_result(
   pass_if(~ identical(.result, airquality$Wind[airquality$Month==6]), "Good Job!"),
@@ -485,6 +502,11 @@ grade_result(
 
 ```{r q6, exercise=TRUE}
 ```
+
+<div id= "q6-hint">
+**Hint:** Refer to 'Other Logical Operators--AND' for help!
+</div>
+
 
 ```{r q6-check}
 grade_result(
@@ -504,6 +526,10 @@ learnr::question("Select the correct way to check the number of observations you
          random_answer_order = TRUE
 )
 ```
+
+<div id= "q7-hint">
+**Hint:** Just think about the command you would write to check the length of a vector; the vector is already there in the previous question!
+</div>
 
 ###
 

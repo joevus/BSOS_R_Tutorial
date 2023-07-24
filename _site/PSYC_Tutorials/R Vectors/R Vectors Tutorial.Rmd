@@ -3,6 +3,7 @@ title: "Introduction to R and Vectors"
 output: 
   learnr::tutorial:
     progressive: true
+    allow_skip: true
 runtime: shiny_prerendered
 tutorial:
   id: "R-vectors"
@@ -262,7 +263,11 @@ grade_result(
 ```{r exercise4, exercise=TRUE}
 ```
 
-```{r exercise4-solution}
+```{r exercise4-hint}
+sentence <- "..."
+```
+
+```{r exercise4-solution, exercise.reveal_solution = FALSE}
 sentence <- "R is fun to learn"
 sentence
 ```
@@ -288,7 +293,11 @@ learnr::question("Which of these is the correct way to check the type of the vec
 ```{r exercise5, exercise=TRUE}
 ```
 
-```{r exercise5-solution}
+```{r exercise5-hint}
+sentence2 <- c(object1, object2)
+```
+
+```{r exercise5-solution, exercise.reveal_solution = FALSE}
 sentence2 <- c(sentence,"Feeling good!")
 sentence2
 ```

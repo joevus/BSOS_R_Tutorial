@@ -3,6 +3,7 @@ title: "Data Cleaning in R"
 output: 
   learnr::tutorial:
     progressive: true
+    allow_skip: true
 runtime: shiny_prerendered
 tutorial:
   id: "R-data-cleaning"
@@ -17,7 +18,7 @@ library(readxl)
 library(xlsx)
 library(datasets)
 library(psych)
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 knitr::opts_chunk$set(exercise.checker = gradethis::grade_learnr)
 learnr::tutorial_options(
   exercise.timelimit = 60)
@@ -332,7 +333,14 @@ data("airquality")
 How will you find the mean of `Ozone` concentration, given that you are supposed to delete any missing value for this variable?
 
 ```{r exercise1, exercise=TRUE, echo=FALSE}
+
+
 ```
+
+<div id = "exercise1-hint">
+**Hint:** Refer to the section "casewise deletion" if you need some help!
+</div>
+
 
 ```{r exercise1-check, echo=FALSE}
 grade_result(
@@ -346,9 +354,15 @@ grade_result(
 How would you impute the missing values for `Ozone` with their median?
 
 ```{r exercise2, exercise=TRUE, echo=FALSE}
+
+
 ```
 
-```{r exercise2-solution, echo=FALSE}
+<div id = "exercise2-hint">
+**Hint:** Refer to "Doing Median Imputation" for help, if needed!
+</div>
+
+```{r exercise2-solution, echo=FALSE, exercise.reveal_solution = FALSE}
 airquality$Ozone[is.na(airquality$Ozone)] <- median(airquality$Ozone,na.rm = TRUE)
 ```
 
@@ -363,7 +377,14 @@ grade_code("Excellent")
 How would you omit all rows containing missing values?
 
 ```{r exercise3, exercise=TRUE, echo=FALSE}
+
+
 ```
+
+<div id = "exercise3-hint">
+**Hint:** Check "Listwise deletion" if a little help is required!
+</div>
+
 
 ```{r exercise3-check, echo=FALSE}
 grade_result(

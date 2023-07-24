@@ -3,6 +3,7 @@ title: "Correlation and Regression"
 output: 
   learnr::tutorial:
     progressive: true
+    allow_skip: true
 runtime: shiny_prerendered
 tutorial:
   id: "regression"
@@ -16,7 +17,7 @@ library(datasets)
 library(ggplot2)
 library(testthat)
 knitr::opts_chunk$set(exercise.checker = gradethis::grade_learnr)
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = FALSE,message = FALSE, warning = FALSE)
 learnr::tutorial_options(
   exercise.timelimit = 60)
 ```
@@ -174,6 +175,10 @@ How would you find a linear regression model using measures on fertility as the 
 ```{r exercise1, exercise=TRUE}
 ```
 
+<div id = "exercise1-hint">
+**Hint:** For a simple linear regression, just check the "Multiple Regression" section.
+</div>
+
 ```{r exercise1-check}
 grade_this({
   pass_if(setequal(.result,lm(Fertility ~ Infant.Mortality, data = swiss)), "Good Job!")
@@ -201,6 +206,10 @@ How would you find a linear regression model using fertility measures as the out
 ```{r exercise3, exercise=TRUE}
 ```
 
+<div id = "exercise3-hint">
+**Hint:** For interaction term, remember what to use inside lm() , + or * .
+</div>
+
 ```{r exercise3-check}
 grade_this({
   pass_if(setequal(.result,lm(Fertility ~ Education*Catholic, data = swiss)), "Good Job!")
@@ -217,6 +226,7 @@ submission_code <- function(UID){
 ```
 
 Generate your submission code by putting in your UID in the function below. For example, if your UID is `2`, then your code should look like `submission_code(UID = 2)`
+
 ```{r submission, exercise = TRUE}
 # Replace the number below with your UID
 submission_code(2)
