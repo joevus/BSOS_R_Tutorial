@@ -43,6 +43,9 @@ data.working <- data.original1
 ## Structure & Summary of Dataset
 
 ```{r}
+#Taking a quick look at how the data looks like
+head(data.working)
+
 #str() allows us to see the structure of the variables in the dataset
 str(data.working)
 
@@ -93,11 +96,15 @@ data.working$Stat.Anxiety_Name <- as.factor(data.working$Stat.Anxiety_Name)
 str(data.working)
 
 #Running the Code
-describe.by(data.working, data.working$Stat.Anxiety_Name)
+describeBy(data.working, data.working$Stat.Anxiety_Name)
   #describe(dataset, dataset$group)
 ```
 
-*Note: For more information on `describe.by()`, refer to this [link](https://www.rdocumentation.org/packages/psych/versions/2.0.12/topics/describeBy)*.
+*Note 1:* For more information on `describe.by()`, refer to this [link](https://www.rdocumentation.org/packages/psych/versions/2.0.12/topics/describeBy) . 
+
+*Note 2:* Sometimes while working on your own R environment, you might see a warning like the following when you use describe.by();
+"Warning: describe.by is deprecated.  Please use the describeBy function".
+Not to worry, just use the later version!
 
 
 ## Review of Subsetting in R
@@ -169,6 +176,34 @@ data.working$Scores[data.working$Stat.Anxiety == 1 & data.working$Sleep > 300]
 
 #Exam Scores for Statistics Anxiety High (3) & Motivation Less than or Equal to 5
 data.working$Scores[data.working$Stat.Anxiety == 3 & data.working$Motivation <= 5]
+```
+
+Before moving on to the new section, here is a quick review exercise for you!
+
+### Review Exercise
+
+1. Choose the correct option.
+
+```{r review1-question, echo=FALSE}
+learnr::question("Which of the following options will be the best way to filter out the scores of the students who took the exam on paper?",
+         answer("data.working$Note_Type_T1==1", correct=FALSE, message = "Be careful about the subsetting"),
+         answer("data.working$Scores[data.working$Note_Type_Name == 'paper']", correct = TRUE,  message = "Good job!"),
+         answer("data.working[data.working$Note_Type_Name == 'paper'& data.working$Scores]",  correct = FALSE, message = "Look closely at what we are trying to measure."),
+         allow_retry = TRUE,
+         random_answer_order = TRUE
+)
+```
+
+2. Suppose you are asked to report the difference in average scores between students who had motivation more than 5 and had low anxiety and the students who had motivation less than or equal to 5 and had high anxiety.
+
+```{r review2-question, echo=FALSE}
+learnr::question("Identify the correct piece of code to perform the task in the question.",
+         answer("data.working$Scores[data.working$Motivation >5 & data.working$Stat.Anxiety  == 1] - data.working$Scores[data.working$Motivation <=5 & data.working$Stat.Anxiety  == 3] ", correct=FALSE, message = "We want the difference in average!"),
+         answer("mean(data.working$Scores[data.working$Motivation >5 & data.working$Stat.Anxiety  == 1]) - mean(data.working$Scores[data.working$Motivation <=5 & data.working$Stat.Anxiety  == 3])", correct = TRUE,  message = "Good job!"),
+         answer("data.working$Scores[data.working$Motivation <=5 & data.working$Stat.Anxiety  == 1] - data.working$Scores[data.working$Motivation >5 & data.working$Stat.Anxiety  == 3]",  correct = FALSE, message = "uh-oh!look carefully at the condition for subsetting."),
+         allow_retry = TRUE,
+         random_answer_order = TRUE
+)
 ```
 
 ## Cleaning Datasets
@@ -326,6 +361,7 @@ Consider the `airquality` data set here again.
 
 ```{r echo=TRUE, eval=TRUE}
 data("airquality")
+head(airquality)
 ```
 
 ### Exercise 1
