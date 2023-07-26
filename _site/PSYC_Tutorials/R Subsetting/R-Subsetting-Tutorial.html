@@ -11,7 +11,7 @@
 
 
 <meta name="progressive" content="true" />
-<meta name="allow-skip" content="false" />
+<meta name="allow-skip" content="true" />
 <meta name="learnr-version-prerender" content="0.11.2.9000" />
 
 <title>Subsetting in R</title>
@@ -120,7 +120,7 @@ Lesson 3.</li>
 </ul>
 <div id="section-openingloading-data-set" class="section level3">
 <h3>Opening/loading Data set</h3>
-<pre class="r"><code>dat.org &lt;- read.csv(&quot;D:/BSOS_R_Tutorial/PSYC_Tutorials/data_psych/STAT200_Data_Update_4.8.csv&quot;)
+<pre class="r"><code>dat.org &lt;- read.csv(&quot;../data_psych/STAT200_Data_Update_4.8.csv&quot;)
 dat.work &lt;- dat.org
 
 #Note: Make sure you are using readxl instead of readx1
@@ -174,7 +174,7 @@ head(dat.work) #see first few rows</code></pre>
   </script>
 </div>
 <pre class="r"><code>#View
-View(dat.work) #View entire dataset</code></pre>
+# View(dat.work) #View entire dataset</code></pre>
 </div>
 <div id="section-extracting-specific-variables-columns"
 class="section level3">
@@ -310,6 +310,10 @@ data-lines="0">
 <script>if (Tutorial.triggerMathJax) Tutorial.triggerMathJax()</script>
 </div>
 </div>
+<div id="section-question1-hint">
+<p><strong>Hint :</strong> In case you need to revisit the materials,
+refer to the subsection ‘Extracting Specific Variables’.</p>
+</div>
 <div class="panel panel-default tutorial-question-container">
 <div data-label="question2" class="tutorial-question panel-body">
 <div id="question2-answer_container" class="shiny-html-output"></div>
@@ -317,6 +321,11 @@ data-lines="0">
 <div id="question2-action_button_container" class="shiny-html-output"></div>
 <script>if (Tutorial.triggerMathJax) Tutorial.triggerMathJax()</script>
 </div>
+</div>
+<div id="section-question2-hint">
+<p><strong>Hint :</strong> In case you need to revisit the materials,
+refer to the subsection ‘Selecting specific variables and rows in a
+dataset’.</p>
 </div>
 </div>
 <div id="section-section" class="section level3">
@@ -434,6 +443,11 @@ resulting vector as <code>std_temp</code>.</li>
 <div class="tutorial-exercise" data-label="q3" data-completion="1"
 data-diagnostics="1" data-startover="1" data-lines="0">
 <script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":true,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
+</div>
+<div class="tutorial-exercise-support" data-label="q3-hint"
+data-completion="1" data-diagnostics="1" data-startover="1"
+data-lines="0">
+<pre class="text"><code>std_temp &lt;- (variable-78)/9</code></pre>
 </div>
 </div>
 <div id="section-section-1" class="section level3">
@@ -762,6 +776,10 @@ data-diagnostics="1" data-startover="1" data-lines="0">
 data-diagnostics="1" data-startover="1" data-lines="0">
 <script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":true,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
 </div>
+<div id="section-q5-hint">
+<p><strong>Hint:</strong> Refer to ‘Other Logical Operators– Equal
+to/Not equal to’ for a refresher!</p>
+</div>
 <ol start="3" style="list-style-type: decimal">
 <li>Using subsetting on <code>airquality</code>, print the wind speed
 values for month 6 and <code>Temp</code> being less than or equal to
@@ -770,6 +788,10 @@ values for month 6 and <code>Temp</code> being less than or equal to
 <div class="tutorial-exercise" data-label="q6" data-completion="1"
 data-diagnostics="1" data-startover="1" data-lines="0">
 <script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":true,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
+</div>
+<div id="section-q6-hint">
+<p><strong>Hint:</strong> Refer to ‘Other Logical Operators–AND’ for
+help!</p>
 </div>
 <ol start="4" style="list-style-type: decimal">
 <li>Answer the following.</li>
@@ -781,6 +803,11 @@ data-diagnostics="1" data-startover="1" data-lines="0">
 <div id="question7-action_button_container" class="shiny-html-output"></div>
 <script>if (Tutorial.triggerMathJax) Tutorial.triggerMathJax()</script>
 </div>
+</div>
+<div id="section-q7-hint">
+<p><strong>Hint:</strong> Just think about the command you would write
+to check the length of a vector; the vector is already there in the
+previous question!</p>
 </div>
 </div>
 <div id="section-section-2" class="section level3">
@@ -875,15 +902,15 @@ learnr:::store_exercise_cache(structure(list(label = "code_sandbox", global_setu
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "question1", question = structure("To extract the solar radiation amounts in the air, which of the following ways can be used?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_2977c4b", 
+"character")), answers = list(structure(list(id = "lnr_ans_26cd876", 
     option = "airquality$Solar.R", value = "airquality$Solar.R", 
     label = structure("airquality$Solar.R", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = structure("Good job!", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_5a51f78", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_aaa5a72", 
     option = "airquality$2", value = "airquality$2", label = structure("airquality$2", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_ed12034", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_cb6e76", 
     option = "airquality[2,]", value = "airquality[2,]", label = structure("airquality[2,]", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
 "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -893,7 +920,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "question1-answer", question = "question1"), loading = NULL, 
-    random_answer_order = TRUE, allow_retry = TRUE, seed = 618180760.212137, 
+    random_answer_order = TRUE, allow_retry = TRUE, seed = 1565015951.77123, 
     options = list()), class = c("learnr_radio", "tutorial_question"
 )), session = session)
 </script>
@@ -901,16 +928,16 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "question2", question = structure("How can you extract the values of first 3 variables for the first 3 cases?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_76c40e5", 
+"character")), answers = list(structure(list(id = "lnr_ans_7b5a955", 
     option = "airquality[1:3,1:3]", value = "airquality[1:3,1:3]", 
     label = structure("airquality[1:3,1:3]", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = structure("Good job!", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_6ec842b", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_22b13c1", 
     option = "airquality[1:3,]", value = "airquality[1:3,]", 
     label = structure("airquality[1:3,]", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_7f6f212", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_2dcdfd2", 
     option = "airquality[,1:3]", value = "airquality[,1:3]", 
     label = structure("airquality[,1:3]", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -921,7 +948,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "question2-answer", question = "question2"), loading = NULL, 
-    random_answer_order = TRUE, allow_retry = TRUE, seed = 1581123725.26373, 
+    random_answer_order = TRUE, allow_retry = TRUE, seed = 1355654832.36872, 
     options = list()), class = c("learnr_radio", "tutorial_question"
 )), session = session)
 </script>
@@ -1100,18 +1127,18 @@ learnr:::store_exercise_cache(structure(list(label = "q6", global_setup = struct
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "question7", question = structure("Select the correct way to check the number of observations you had after the last subsetting operation, i.e. in question 3.", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_59b80cd", 
+"character")), answers = list(structure(list(id = "lnr_ans_24f2e", 
     option = "length(airquality$Month==6 & airquality$Temp <=80)", 
     value = "length(airquality$Month==6 & airquality$Temp <=80)", 
     label = structure("length(airquality$Month==6 &amp; airquality$Temp &lt;=80)", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_d477a9b", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_12bc0a", 
     option = "length(airquality$Wind[airquality$Month==6 & airquality$Temp <=80])", 
     value = "length(airquality$Wind[airquality$Month==6 & airquality$Temp <=80])", 
     label = structure("length(airquality$Wind[airquality$Month==6 &amp; airquality$Temp &lt;=80])", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = structure("Good job!", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_96a436b", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_98a9f9f", 
     option = "length(airquality$Wind[airquality$Month=6 & Temp <=80])", 
     value = "length(airquality$Wind[airquality$Month=6 & Temp <=80])", 
     label = structure("length(airquality$Wind[airquality$Month=6 &amp; Temp &lt;=80])", html = TRUE, class = c("html", 
@@ -1123,7 +1150,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "question7-answer", question = "question7"), loading = NULL, 
-    random_answer_order = TRUE, allow_retry = TRUE, seed = 932105274.565955, 
+    random_answer_order = TRUE, allow_retry = TRUE, seed = 19279156.9910224, 
     options = list()), class = c("learnr_radio", "tutorial_question"
 )), session = session)
 </script>

@@ -3,6 +3,7 @@ title: "Numerical Descriptive Statistics"
 output: 
   learnr::tutorial:
     progressive: true
+    allow_skip: true
 runtime: shiny_prerendered
 
 tutorial:
@@ -54,12 +55,12 @@ Many of the functions for getting numerical summaries of center and spread are i
 | `IQR(x)` | Finds the IQR of a vector `x`|
 | `summary(x)` | Finds the minimum, 1st quartile, median, mean, 3rd quartile and maximum of a vector `x`, or of each column in a data frame `x`|
 
-In general, these are used on a vector, rather than a data frame, so you'll need to be careful to specify the correct column within the data frame. Remember that you can use `$` notation to extract a specific column from the data frame.
+In general, these are used on a **vector**, rather than a data frame, so you'll need to be careful to specify the correct column within the data frame. Remember that you can use `$` notation to extract a specific column from the data frame.
 
 
 ```{r, echo=TRUE}
-mean(iris$Sepal.Length)
-sd(iris$Sepal.Length)
+mean(iris$Sepal.Length) # computes the arithmetic mean of the sepal length column from the iris data
+sd(iris$Sepal.Length)  #computes the standard deviation of the sepal length column from the iris data
 ```
 
 ### Practice Problem
@@ -72,7 +73,9 @@ How would you find the median `sepal length` of the iris flowers?
 ```{r practice1-check}
 grade_result(
   pass_if(~ identical(.result, median(iris$Sepal.Length)), "Good Job!"),
-  fail_if(~ TRUE)
+  fail_if(~ identical(.result, mean(iris$Sepal.Length)), "You are expected to calculate the median,check the function you are using!"),
+  fail_if(~ identical(.result, median(iris)), "Oops! Looks like you are not passing vector into the function!"),
+  fail_if(~ TRUE, "Not quite, try again!")
 )
 ```
 
@@ -132,8 +135,11 @@ Submit the required code below.
 ```{r practice2, exercise = TRUE}
 ```
 
+<div id = "practice2-hint">
+**Hint:** Remember how we add titles to plots? If not, visit the subsection "Visualizing Numerical Variables" for a quick review.
+</div>
 
-```{r practice2-solution}
+```{r practice2-solution, practice2.reveal_solution = FALSE}
 boxplot(iris$Petal.Length,main = "Boxplot of Petal Length")
 ```
  
@@ -233,7 +239,8 @@ What is the mean number of cylinders for cars that have a V-shaped engine?
 ```{r exercise2-check}
 grade_result(
   pass_if(~ identical(.result, mean(mtcars$cyl[mtcars$vs == 0])), "Good Job!"),
-  fail_if(~ TRUE)
+  fail_if(~ identical(.result, mean(mtcars$cyl[mtcars$vs == 1])), "Oops looks like these cars do not have a V shaped engine!" ),
+  fail_if(~ TRUE, "Revisit the data frame tutorial to check how the subsetting should be done!")
 )
 ```
 
@@ -252,8 +259,7 @@ Create a histogram of the `Miles/gallon` for all cars who had a V-shaped engine.
 grade_result(
   pass_if(~ identical(.result, hist(mtcars[mtcars$vs == 0,'mpg'], breaks = 15)), "Good Job!"),
   pass_if(~ identical(.result, hist(mtcars$mpg[mtcars$vs == 0], breaks = 15)), "Good Job!"),
-  # pass_if(~ isTRUE(all.equal(.result, qplot(mtcars[mtcars$vs == 0,'mpg'], bins = 15))), "Good Job!"),
-  fail_if(~ TRUE)
+  fail_if(~ TRUE, "Use hist(properly sliced data, breaks = 15)")
 )
 ```
 

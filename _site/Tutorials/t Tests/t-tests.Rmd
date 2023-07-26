@@ -3,6 +3,7 @@ title: "T-tests"
 output: 
   learnr::tutorial:
     progressive: true
+    allow_skip: true
 runtime: shiny_prerendered
 tutorial:
   id: "t-tests"
@@ -14,7 +15,7 @@ tutorial:
 library(learnr)
 library(gradethis)
 library(faraway)
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 knitr::opts_chunk$set(exercise.checker = gradethis::grade_learnr)
 learnr::tutorial_options(
   exercise.timelimit = 60)
@@ -138,10 +139,16 @@ The official who was preparing the report earlier mentioned income of the teenag
 ```{r exercise1, echo = TRUE, exercise = TRUE}
 ```
 
+<div id = "exercise1-hint">
+**Hint:** For a quick review, refer to "Using t.test()" subsection in the tutorial.
+</div>
+
 ```{r exercise1-check}
 grade_result(
   pass_if(~ identical(.result, t.test(teengamb$income, mu = 5, alternative = 'less')), "Good job!"),
-  fail_if(~ TRUE, "Not quite. Try again.")
+  fail_if(~ identical(.result, t.test(teengamb$income, mu = 5)), "Oops looks like you missed to specify the alternative hypothesis!"),
+  fail_if(~ identical(.result, t.test(teengamb$income, alternative = 'less')), "You are expected to test the hypothesis against mu = 5"),
+  fail_if(~ TRUE, "Not quite, refer to the section on 'Using t.test()' ")
 )
 ```
 
@@ -164,11 +171,16 @@ Suppose you are interested in whether there is a relationship between the gender
 ```{r exercise3, echo = TRUE, exercise = TRUE}
 ```
 
+<div id = "exercise3-hint">
+**Hint:** In case you need a little help, go back to "Independent Samples t-test". 
+</div>
 
 ```{r exercise3-check}
 grade_result(
   pass_if(~ identical(.result, t.test(status ~ sex, data = teengamb)), "Good job!"),
-  fail_if(~ TRUE, "Not quite. Try again.")
+  fail_if(~ identical(.result, t.test(sex ~ status, data = teengamb)), "Looks like you misplaced the variables, refer to 'Independent Sample t-test' for a quick review."),
+  pass_if(~ identical(.result, t.test(status ~ sex, data = teengamb, alternative = "two.sided")), "Good job! But you don't need to specify the alternative because it's two-sided by default!"),
+  fail_if(~ TRUE, "Not quite. Refer back to 'Independent Sample t-test'. ")
 )
 ```
 

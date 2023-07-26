@@ -11,7 +11,7 @@
 
 
 <meta name="progressive" content="true" />
-<meta name="allow-skip" content="false" />
+<meta name="allow-skip" content="true" />
 <meta name="learnr-version-prerender" content="0.11.2.9000" />
 
 <title>Introduction to R</title>
@@ -137,11 +137,10 @@ worth getting to know it a little bit.</p>
 </div>
 <div id="section-four-windows" class="section level3">
 <h3>Four Windows</h3>
-<div class="figure">
-<img
-src="images/rstudio.jpg"
-id="section-id" class="class" width="700" height="445" alt="" />
-<p class="caption">Figure 1: The RStudio environment</p>
+<div class="float" id="section-id">
+<img src="images/rstudio.jpg" class="class" width="700" height="445"
+alt="Figure 1: The RStudio environment" />
+<div class="figcaption">Figure 1: The RStudio environment</div>
 </div>
 <ul>
 <li><strong>Top Left</strong>: R Markdown File: This is where you will
@@ -395,15 +394,11 @@ data-lines="0">
 </div>
 <div id="section-exercise-2" class="section level3">
 <h3>Exercise 2</h3>
-<p>What is the sum of all even numbers between 2 and 100, inclusive?</p>
+<p>What is the sum of the first 5 natural numbers?</p>
 <div class="tutorial-exercise" data-label="exercise2"
 data-completion="1" data-diagnostics="1" data-startover="1"
 data-lines="0">
 <script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":true,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
-</div>
-<div id="section-exercise2-hint">
-<p><strong>Hint:</strong> How would you get a vector of all even numbers
-between 2 and 100? How would you sum them up?</p>
 </div>
 </div>
 <div id="section-exercise-3" class="section level3">
@@ -435,7 +430,7 @@ submission_code(2)</code></pre>
 library(MASS)
 library(learnr)
 library(gradethis)
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 knitr::opts_chunk$set(exercise.checker = gradethis::grade_learnr)
 learnr::tutorial_options(
   exercise.timelimit = 60)
@@ -471,7 +466,7 @@ output$`tutorial-exercise-code_sandbox-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "code_sandbox", global_setup = structure(c("library(MASS)", 
-"library(learnr)", "library(gradethis)", "knitr::opts_chunk$set(echo = FALSE)", 
+"library(learnr)", "library(gradethis)", "knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)", 
 "knitr::opts_chunk$set(exercise.checker = gradethis::grade_learnr)", 
 "learnr::tutorial_options(", "  exercise.timelimit = 60)"), chunk_opts = list(
     label = "setup", include = FALSE)), setup = NULL, chunks = list(
@@ -491,8 +486,8 @@ learnr:::store_exercise_cache(structure(list(label = "code_sandbox", global_setu
         fig.cap = NULL, fig.scap = NULL, fig.lp = "fig:", fig.subcap = NULL, 
         fig.pos = "", out.width = 624, out.height = NULL, out.extra = NULL, 
         fig.retina = 2, external = TRUE, sanitize = FALSE, interval = 1, 
-        aniopts = "controls,loop", warning = TRUE, error = FALSE, 
-        message = TRUE, render = NULL, ref.label = NULL, child = NULL, 
+        aniopts = "controls,loop", warning = FALSE, error = FALSE, 
+        message = FALSE, render = NULL, ref.label = NULL, child = NULL, 
         engine = "r", split = FALSE, include = TRUE, purl = TRUE, 
         max.print = 1000, exercise.timelimit = 60, exercise.checker = "function (...) \n{\n    lifecycle::deprecate_soft(\"0.2.2\", \"grade_learnr()\", \"gradethis_exercise_checker()\")\n    gradethis_exercise_checker(...)\n}", 
         exercise.error.check.code = "gradethis_error_checker()", 
@@ -512,7 +507,7 @@ output$`tutorial-exercise-printing_practice-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "printing_practice", global_setup = structure(c("library(MASS)", 
-"library(learnr)", "library(gradethis)", "knitr::opts_chunk$set(echo = FALSE)", 
+"library(learnr)", "library(gradethis)", "knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)", 
 "knitr::opts_chunk$set(exercise.checker = gradethis::grade_learnr)", 
 "learnr::tutorial_options(", "  exercise.timelimit = 60)"), chunk_opts = list(
     label = "setup", include = FALSE)), setup = NULL, chunks = list(
@@ -532,8 +527,8 @@ learnr:::store_exercise_cache(structure(list(label = "printing_practice", global
         fig.cap = NULL, fig.scap = NULL, fig.lp = "fig:", fig.subcap = NULL, 
         fig.pos = "", out.width = 624, out.height = NULL, out.extra = NULL, 
         fig.retina = 2, external = TRUE, sanitize = FALSE, interval = 1, 
-        aniopts = "controls,loop", warning = TRUE, error = FALSE, 
-        message = TRUE, render = NULL, ref.label = NULL, child = NULL, 
+        aniopts = "controls,loop", warning = FALSE, error = FALSE, 
+        message = FALSE, render = NULL, ref.label = NULL, child = NULL, 
         engine = "r", split = FALSE, include = TRUE, purl = TRUE, 
         max.print = 1000, exercise.timelimit = 60, exercise.checker = "function (...) \n{\n    lifecycle::deprecate_soft(\"0.2.2\", \"grade_learnr()\", \"gradethis_exercise_checker()\")\n    gradethis_exercise_checker(...)\n}", 
         exercise.error.check.code = "gradethis_error_checker()", 
@@ -545,16 +540,16 @@ learnr:::store_exercise_cache(structure(list(label = "printing_practice", global
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "function", question = structure("Which of these is the correct way to call the <code>print<\u002fcode> function to print the words ‘some text here’?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_13b3449", 
+"character")), answers = list(structure(list(id = "lnr_ans_f0e6609", 
     option = "print 'some text here'", value = "print 'some text here'", 
     label = structure("print ‘some text here’", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_80c75ec", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_68edefd", 
     option = "print('some text here')", value = "print('some text here')", 
     label = structure("print(‘some text here’)", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = structure("Good job!", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_8e5862d", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_60f2c3d", 
     option = "print(some text here)", value = "print(some text here)", 
     label = structure("print(some text here)", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -565,7 +560,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "function-answer", question = "function"), loading = NULL, 
-    random_answer_order = TRUE, allow_retry = TRUE, seed = 1340832737.87563, 
+    random_answer_order = TRUE, allow_retry = TRUE, seed = 144340951.932786, 
     options = list()), class = c("learnr_radio", "tutorial_question"
 )), session = session)
 </script>
@@ -580,7 +575,7 @@ output$`tutorial-exercise-exercise1-output` <- renderUI({
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "exercise1", global_setup = structure(c("library(MASS)", 
-"library(learnr)", "library(gradethis)", "knitr::opts_chunk$set(echo = FALSE)", 
+"library(learnr)", "library(gradethis)", "knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)", 
 "knitr::opts_chunk$set(exercise.checker = gradethis::grade_learnr)", 
 "learnr::tutorial_options(", "  exercise.timelimit = 60)"), chunk_opts = list(
     label = "setup", include = FALSE)), setup = NULL, chunks = list(
@@ -602,8 +597,8 @@ learnr:::store_exercise_cache(structure(list(label = "exercise1", global_setup =
         fig.cap = NULL, fig.scap = NULL, fig.lp = "fig:", fig.subcap = NULL, 
         fig.pos = "", out.width = 624, out.height = NULL, out.extra = NULL, 
         fig.retina = 2, external = TRUE, sanitize = FALSE, interval = 1, 
-        aniopts = "controls,loop", warning = TRUE, error = FALSE, 
-        message = TRUE, render = NULL, ref.label = NULL, child = NULL, 
+        aniopts = "controls,loop", warning = FALSE, error = FALSE, 
+        message = FALSE, render = NULL, ref.label = NULL, child = NULL, 
         engine = "r", split = FALSE, include = TRUE, purl = TRUE, 
         max.print = 1000, exercise.timelimit = 60, exercise.checker = "function (...) \n{\n    lifecycle::deprecate_soft(\"0.2.2\", \"grade_learnr()\", \"gradethis_exercise_checker()\")\n    gradethis_exercise_checker(...)\n}", 
         exercise.error.check.code = "gradethis_error_checker()", 
@@ -623,14 +618,14 @@ output$`tutorial-exercise-exercise2-output` <- renderUI({
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "exercise2", global_setup = structure(c("library(MASS)", 
-"library(learnr)", "library(gradethis)", "knitr::opts_chunk$set(echo = FALSE)", 
+"library(learnr)", "library(gradethis)", "knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)", 
 "knitr::opts_chunk$set(exercise.checker = gradethis::grade_learnr)", 
 "learnr::tutorial_options(", "  exercise.timelimit = 60)"), chunk_opts = list(
     label = "setup", include = FALSE)), setup = NULL, chunks = list(
     list(label = "exercise2", code = "\n\n", opts = list(label = "\"exercise2\"", 
         exercise = "TRUE"), engine = "r")), code_check = NULL, 
     error_check = NULL, check = structure(c("grade_result(", 
-    "  pass_if(~ identical(.result, sum(2*(1:50))), \"Good Job!\"),", 
+    "  pass_if(~ identical(.result, sum(1:5)), \"Good Job!\"),", 
     "  fail_if(~ TRUE)", ")"), chunk_opts = list(label = "exercise2-check")), 
     solution = NULL, tests = NULL, options = list(eval = FALSE, 
         echo = TRUE, results = "markup", tidy = FALSE, tidy.opts = NULL, 
@@ -645,8 +640,8 @@ learnr:::store_exercise_cache(structure(list(label = "exercise2", global_setup =
         fig.cap = NULL, fig.scap = NULL, fig.lp = "fig:", fig.subcap = NULL, 
         fig.pos = "", out.width = 624, out.height = NULL, out.extra = NULL, 
         fig.retina = 2, external = TRUE, sanitize = FALSE, interval = 1, 
-        aniopts = "controls,loop", warning = TRUE, error = FALSE, 
-        message = TRUE, render = NULL, ref.label = NULL, child = NULL, 
+        aniopts = "controls,loop", warning = FALSE, error = FALSE, 
+        message = FALSE, render = NULL, ref.label = NULL, child = NULL, 
         engine = "r", split = FALSE, include = TRUE, purl = TRUE, 
         max.print = 1000, exercise.timelimit = 60, exercise.checker = "function (...) \n{\n    lifecycle::deprecate_soft(\"0.2.2\", \"grade_learnr()\", \"gradethis_exercise_checker()\")\n    gradethis_exercise_checker(...)\n}", 
         exercise.error.check.code = "gradethis_error_checker()", 
@@ -666,7 +661,7 @@ output$`tutorial-exercise-exercise3-output` <- renderUI({
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "exercise3", global_setup = structure(c("library(MASS)", 
-"library(learnr)", "library(gradethis)", "knitr::opts_chunk$set(echo = FALSE)", 
+"library(learnr)", "library(gradethis)", "knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)", 
 "knitr::opts_chunk$set(exercise.checker = gradethis::grade_learnr)", 
 "learnr::tutorial_options(", "  exercise.timelimit = 60)"), chunk_opts = list(
     label = "setup", include = FALSE)), setup = NULL, chunks = list(
@@ -688,8 +683,8 @@ learnr:::store_exercise_cache(structure(list(label = "exercise3", global_setup =
         fig.cap = NULL, fig.scap = NULL, fig.lp = "fig:", fig.subcap = NULL, 
         fig.pos = "", out.width = 624, out.height = NULL, out.extra = NULL, 
         fig.retina = 2, external = TRUE, sanitize = FALSE, interval = 1, 
-        aniopts = "controls,loop", warning = TRUE, error = FALSE, 
-        message = TRUE, render = NULL, ref.label = NULL, child = NULL, 
+        aniopts = "controls,loop", warning = FALSE, error = FALSE, 
+        message = FALSE, render = NULL, ref.label = NULL, child = NULL, 
         engine = "r", split = FALSE, include = TRUE, purl = TRUE, 
         max.print = 1000, exercise.timelimit = 60, exercise.checker = "function (...) \n{\n    lifecycle::deprecate_soft(\"0.2.2\", \"grade_learnr()\", \"gradethis_exercise_checker()\")\n    gradethis_exercise_checker(...)\n}", 
         exercise.error.check.code = "gradethis_error_checker()", 
@@ -709,7 +704,7 @@ output$`tutorial-exercise-submission-output` <- renderUI({
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "submission", global_setup = structure(c("library(MASS)", 
-"library(learnr)", "library(gradethis)", "knitr::opts_chunk$set(echo = FALSE)", 
+"library(learnr)", "library(gradethis)", "knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)", 
 "knitr::opts_chunk$set(exercise.checker = gradethis::grade_learnr)", 
 "learnr::tutorial_options(", "  exercise.timelimit = 60)"), chunk_opts = list(
     label = "setup", include = FALSE)), setup = "submission_code <- function(UID){\n  httr::sha1_hash('intror',as.character(UID))\n}", 
@@ -731,8 +726,8 @@ learnr:::store_exercise_cache(structure(list(label = "submission", global_setup 
         fig.cap = NULL, fig.scap = NULL, fig.lp = "fig:", fig.subcap = NULL, 
         fig.pos = "", out.width = 624, out.height = NULL, out.extra = NULL, 
         fig.retina = 2, external = TRUE, sanitize = FALSE, interval = 1, 
-        aniopts = "controls,loop", warning = TRUE, error = FALSE, 
-        message = TRUE, render = NULL, ref.label = NULL, child = NULL, 
+        aniopts = "controls,loop", warning = FALSE, error = FALSE, 
+        message = FALSE, render = NULL, ref.label = NULL, child = NULL, 
         engine = "r", split = FALSE, include = TRUE, purl = TRUE, 
         max.print = 1000, exercise.timelimit = 60, exercise.checker = "function (...) \n{\n    lifecycle::deprecate_soft(\"0.2.2\", \"grade_learnr()\", \"gradethis_exercise_checker()\")\n    gradethis_exercise_checker(...)\n}", 
         exercise.error.check.code = "gradethis_error_checker()", 

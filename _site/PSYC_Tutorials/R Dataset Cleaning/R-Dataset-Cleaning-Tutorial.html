@@ -11,7 +11,7 @@
 
 
 <meta name="progressive" content="true" />
-<meta name="allow-skip" content="false" />
+<meta name="allow-skip" content="true" />
 <meta name="learnr-version-prerender" content="0.11.2.9000" />
 
 <title>Data Cleaning in R</title>
@@ -123,7 +123,7 @@ observations in your data. Let’s begin!</p>
 <li>Remember to load the package <code>readxl</code> in your local
 environment before reading a .xlsx file.</li>
 </ul>
-<pre class="r"><code>data.original1 &lt;- read_xlsx(&quot;D:/BSOS_R_Tutorial/PSYC_Tutorials/data_psych/STAT200_Data_Update_4.8_original.xlsx&quot;)
+<pre class="r"><code>data.original1 &lt;- read_xlsx(&quot;../data_psych/STAT200_Data_Update_4.8_original.xlsx&quot;)
 data.working &lt;- data.original1</code></pre>
 </div>
 <div id="section-structure-summary-of-dataset" class="section level2">
@@ -236,7 +236,6 @@ str(data.working)</code></pre>
 ##  $ Missing_Data        : chr [1:90] &quot;No&quot; &quot;No&quot; &quot;No&quot; &quot;No&quot; ...</code></pre>
 <pre class="r"><code>#Running the Code
 describe.by(data.working, data.working$Stat.Anxiety_Name)</code></pre>
-<pre><code>## Warning: describe.by is deprecated. Please use the describeBy function</code></pre>
 <pre><code>## 
 ##  Descriptive statistics by group 
 ## group: High_Stat_Anxiety
@@ -668,6 +667,10 @@ data-completion="1" data-diagnostics="1" data-startover="1"
 data-lines="0">
 <script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":true,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
 </div>
+<div id="section-exercise1-hint">
+<p><strong>Hint:</strong> Refer to the section “casewise deletion” if
+you need some help!</p>
+</div>
 </div>
 <div id="section-exercise-2" class="section level3">
 <h3>Exercise 2</h3>
@@ -678,10 +681,9 @@ data-completion="1" data-diagnostics="1" data-startover="1"
 data-lines="0">
 <script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":true,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
 </div>
-<div class="tutorial-exercise-support" data-label="exercise2-solution"
-data-completion="1" data-diagnostics="1" data-startover="1"
-data-lines="0">
-<pre class="text"><code>airquality$Ozone[is.na(airquality$Ozone)] &lt;- median(airquality$Ozone,na.rm = TRUE)</code></pre>
+<div id="section-exercise2-hint">
+<p><strong>Hint:</strong> Refer to “Doing Median Imputation” for help,
+if needed!</p>
 </div>
 </div>
 <div id="section-section-1" class="section level3">
@@ -694,6 +696,10 @@ data-lines="0">
 data-completion="1" data-diagnostics="1" data-startover="1"
 data-lines="0">
 <script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":true,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
+</div>
+<div id="section-exercise3-hint">
+<p><strong>Hint:</strong> Check “Listwise deletion” if a little help is
+required!</p>
 </div>
 </div>
 <div id="section-section-2" class="section level3">
@@ -724,7 +730,7 @@ library(readxl)
 library(xlsx)
 library(datasets)
 library(psych)
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 knitr::opts_chunk$set(exercise.checker = gradethis::grade_learnr)
 learnr::tutorial_options(
   exercise.timelimit = 60)
@@ -761,11 +767,11 @@ output$`tutorial-exercise-exercise1-output` <- renderUI({
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "exercise1", global_setup = structure(c("library(MASS)", 
 "library(learnr)", "library(gradethis)", "library(readxl)", "library(xlsx)", 
-"library(datasets)", "library(psych)", "knitr::opts_chunk$set(echo = TRUE)", 
+"library(datasets)", "library(psych)", "knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)", 
 "knitr::opts_chunk$set(exercise.checker = gradethis::grade_learnr)", 
 "learnr::tutorial_options(", "  exercise.timelimit = 60)"), chunk_opts = list(
     label = "setup", include = FALSE)), setup = NULL, chunks = list(
-    list(label = "exercise1", code = "\n\n", opts = list(label = "\"exercise1\"", 
+    list(label = "exercise1", code = "\n", opts = list(label = "\"exercise1\"", 
         exercise = "TRUE", echo = "FALSE"), engine = "r")), code_check = NULL, 
     error_check = NULL, check = structure(c("grade_result(", 
     "  pass_if(~ identical(.result, mean(airquality$Ozone,na.rm = TRUE)), \"Good Job!\"),", 
@@ -783,13 +789,13 @@ learnr:::store_exercise_cache(structure(list(label = "exercise1", global_setup =
         fig.cap = NULL, fig.scap = NULL, fig.lp = "fig:", fig.subcap = NULL, 
         fig.pos = "", out.width = 624, out.height = NULL, out.extra = NULL, 
         fig.retina = 2, external = TRUE, sanitize = FALSE, interval = 1, 
-        aniopts = "controls,loop", warning = TRUE, error = FALSE, 
-        message = TRUE, render = NULL, ref.label = NULL, child = NULL, 
+        aniopts = "controls,loop", warning = FALSE, error = FALSE, 
+        message = FALSE, render = NULL, ref.label = NULL, child = NULL, 
         engine = "r", split = FALSE, include = TRUE, purl = TRUE, 
         max.print = 1000, exercise.timelimit = 60, exercise.checker = "function (...) \n{\n    lifecycle::deprecate_soft(\"0.2.2\", \"grade_learnr()\", \"gradethis_exercise_checker()\")\n    gradethis_exercise_checker(...)\n}", 
         exercise.error.check.code = "gradethis_error_checker()", 
-        label = "exercise1", exercise = TRUE, out.width.px = 624, 
-        out.height.px = 384, params.src = "exercise1, exercise=TRUE, echo=FALSE", 
+        label = "exercise1", exercise = TRUE, code = c("", ""
+        ), out.width.px = 624, out.height.px = 384, params.src = "exercise1, exercise=TRUE, echo=FALSE", 
         fig.num = 0L, exercise.df_print = "paged"), engine = "r", 
     version = "4"), class = c("r", "tutorial_exercise")))
 </script>
@@ -805,16 +811,16 @@ output$`tutorial-exercise-exercise2-output` <- renderUI({
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "exercise2", global_setup = structure(c("library(MASS)", 
 "library(learnr)", "library(gradethis)", "library(readxl)", "library(xlsx)", 
-"library(datasets)", "library(psych)", "knitr::opts_chunk$set(echo = TRUE)", 
+"library(datasets)", "library(psych)", "knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)", 
 "knitr::opts_chunk$set(exercise.checker = gradethis::grade_learnr)", 
 "learnr::tutorial_options(", "  exercise.timelimit = 60)"), chunk_opts = list(
     label = "setup", include = FALSE)), setup = NULL, chunks = list(
-    list(label = "exercise2", code = "\n\n", opts = list(label = "\"exercise2\"", 
+    list(label = "exercise2", code = "\n", opts = list(label = "\"exercise2\"", 
         exercise = "TRUE", echo = "FALSE"), engine = "r")), code_check = NULL, 
     error_check = NULL, check = structure("grade_code(\"Excellent\")", chunk_opts = list(
         label = "exercise2-check", echo = FALSE)), solution = structure("airquality$Ozone[is.na(airquality$Ozone)] <- median(airquality$Ozone,na.rm = TRUE)", chunk_opts = list(
-        label = "exercise2-solution", echo = FALSE)), tests = NULL, 
-    options = list(eval = FALSE, echo = TRUE, results = "markup", 
+        label = "exercise2-solution", echo = FALSE, exercise.reveal_solution = FALSE)), 
+    tests = NULL, options = list(eval = FALSE, echo = TRUE, results = "markup", 
         tidy = FALSE, tidy.opts = NULL, collapse = FALSE, prompt = FALSE, 
         comment = NA, highlight = FALSE, size = "normalsize", 
         background = "#F7F7F7", strip.white = TRUE, cache = 0, 
@@ -827,13 +833,13 @@ learnr:::store_exercise_cache(structure(list(label = "exercise2", global_setup =
         fig.cap = NULL, fig.scap = NULL, fig.lp = "fig:", fig.subcap = NULL, 
         fig.pos = "", out.width = 624, out.height = NULL, out.extra = NULL, 
         fig.retina = 2, external = TRUE, sanitize = FALSE, interval = 1, 
-        aniopts = "controls,loop", warning = TRUE, error = FALSE, 
-        message = TRUE, render = NULL, ref.label = NULL, child = NULL, 
+        aniopts = "controls,loop", warning = FALSE, error = FALSE, 
+        message = FALSE, render = NULL, ref.label = NULL, child = NULL, 
         engine = "r", split = FALSE, include = TRUE, purl = TRUE, 
         max.print = 1000, exercise.timelimit = 60, exercise.checker = "function (...) \n{\n    lifecycle::deprecate_soft(\"0.2.2\", \"grade_learnr()\", \"gradethis_exercise_checker()\")\n    gradethis_exercise_checker(...)\n}", 
         exercise.error.check.code = "gradethis_error_checker()", 
-        label = "exercise2", exercise = TRUE, out.width.px = 624, 
-        out.height.px = 384, params.src = "exercise2, exercise=TRUE, echo=FALSE", 
+        label = "exercise2", exercise = TRUE, code = c("", ""
+        ), out.width.px = 624, out.height.px = 384, params.src = "exercise2, exercise=TRUE, echo=FALSE", 
         fig.num = 0L, exercise.df_print = "paged"), engine = "r", 
     version = "4"), class = c("r", "tutorial_exercise")))
 </script>
@@ -849,11 +855,11 @@ output$`tutorial-exercise-exercise3-output` <- renderUI({
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "exercise3", global_setup = structure(c("library(MASS)", 
 "library(learnr)", "library(gradethis)", "library(readxl)", "library(xlsx)", 
-"library(datasets)", "library(psych)", "knitr::opts_chunk$set(echo = TRUE)", 
+"library(datasets)", "library(psych)", "knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)", 
 "knitr::opts_chunk$set(exercise.checker = gradethis::grade_learnr)", 
 "learnr::tutorial_options(", "  exercise.timelimit = 60)"), chunk_opts = list(
     label = "setup", include = FALSE)), setup = NULL, chunks = list(
-    list(label = "exercise3", code = "\n\n", opts = list(label = "\"exercise3\"", 
+    list(label = "exercise3", code = "\n", opts = list(label = "\"exercise3\"", 
         exercise = "TRUE", echo = "FALSE"), engine = "r")), code_check = NULL, 
     error_check = NULL, check = structure(c("grade_result(", 
     "  pass_if(~ identical(.result, na.omit(airquality)), \"Well done!\"),", 
@@ -871,13 +877,13 @@ learnr:::store_exercise_cache(structure(list(label = "exercise3", global_setup =
         fig.cap = NULL, fig.scap = NULL, fig.lp = "fig:", fig.subcap = NULL, 
         fig.pos = "", out.width = 624, out.height = NULL, out.extra = NULL, 
         fig.retina = 2, external = TRUE, sanitize = FALSE, interval = 1, 
-        aniopts = "controls,loop", warning = TRUE, error = FALSE, 
-        message = TRUE, render = NULL, ref.label = NULL, child = NULL, 
+        aniopts = "controls,loop", warning = FALSE, error = FALSE, 
+        message = FALSE, render = NULL, ref.label = NULL, child = NULL, 
         engine = "r", split = FALSE, include = TRUE, purl = TRUE, 
         max.print = 1000, exercise.timelimit = 60, exercise.checker = "function (...) \n{\n    lifecycle::deprecate_soft(\"0.2.2\", \"grade_learnr()\", \"gradethis_exercise_checker()\")\n    gradethis_exercise_checker(...)\n}", 
         exercise.error.check.code = "gradethis_error_checker()", 
-        label = "exercise3", exercise = TRUE, out.width.px = 624, 
-        out.height.px = 384, params.src = "exercise3, exercise=TRUE, echo=FALSE", 
+        label = "exercise3", exercise = TRUE, code = c("", ""
+        ), out.width.px = 624, out.height.px = 384, params.src = "exercise3, exercise=TRUE, echo=FALSE", 
         fig.num = 0L, exercise.df_print = "paged"), engine = "r", 
     version = "4"), class = c("r", "tutorial_exercise")))
 </script>
@@ -893,7 +899,7 @@ output$`tutorial-exercise-submission-output` <- renderUI({
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "submission", global_setup = structure(c("library(MASS)", 
 "library(learnr)", "library(gradethis)", "library(readxl)", "library(xlsx)", 
-"library(datasets)", "library(psych)", "knitr::opts_chunk$set(echo = TRUE)", 
+"library(datasets)", "library(psych)", "knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)", 
 "knitr::opts_chunk$set(exercise.checker = gradethis::grade_learnr)", 
 "learnr::tutorial_options(", "  exercise.timelimit = 60)"), chunk_opts = list(
     label = "setup", include = FALSE)), setup = "submission_code <- function(UID){\n  httr::sha1_hash('data_cleaning',as.character(UID))\n}", 
@@ -916,8 +922,8 @@ learnr:::store_exercise_cache(structure(list(label = "submission", global_setup 
         fig.cap = NULL, fig.scap = NULL, fig.lp = "fig:", fig.subcap = NULL, 
         fig.pos = "", out.width = 624, out.height = NULL, out.extra = NULL, 
         fig.retina = 2, external = TRUE, sanitize = FALSE, interval = 1, 
-        aniopts = "controls,loop", warning = TRUE, error = FALSE, 
-        message = TRUE, render = NULL, ref.label = NULL, child = NULL, 
+        aniopts = "controls,loop", warning = FALSE, error = FALSE, 
+        message = FALSE, render = NULL, ref.label = NULL, child = NULL, 
         engine = "r", split = FALSE, include = TRUE, purl = TRUE, 
         max.print = 1000, exercise.timelimit = 60, exercise.checker = "function (...) \n{\n    lifecycle::deprecate_soft(\"0.2.2\", \"grade_learnr()\", \"gradethis_exercise_checker()\")\n    gradethis_exercise_checker(...)\n}", 
         exercise.error.check.code = "gradethis_error_checker()", 
