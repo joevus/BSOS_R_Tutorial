@@ -20,6 +20,10 @@ learnr::tutorial_options(
   exercise.timelimit = 60)
 ```
 
+# What to learn here
+
+Welcome to learning R! As scary that might sound, once you go through this module, it will help you understand what R is, how to use it and what can be done using R. So, let's begin!
+
 ## Introduction to R
 
 In this module, you will learn how to use the programming language, R, to analyze data. While there are many programs we could use, R has a few advantages:
@@ -153,10 +157,18 @@ grade_result(
 )
 ```
 
-2. Use R to find the sum of squares of 1st five integers.
+2. Use R to find the sum of squares of 1st five natural numbers.
 
 ```{r exercise2, exercise=TRUE}
 ```
+
+<div id= "exercise2-hint-1">
+*Hint:* Remember the natural numbers start from 1!
+</div>
+
+<div id= "exercise2-hint-2">
+*Hint:* This is a two step process to think about. First take the squares and then sum them up!
+</div>
 
 ```{r exercise2-check}
 grade_result(
@@ -226,7 +238,7 @@ Vector8b <- c("Coding is cool", "Wow R is so fun", "I love coding")
 Vector8b
 ```
 
-##### You can check the type of Vector using the `class ( )` function
+#### You can check the type of Vector using the `class ( )` function
 ```{r echo=TRUE}
 #Numeric
 class(Vector6a)
