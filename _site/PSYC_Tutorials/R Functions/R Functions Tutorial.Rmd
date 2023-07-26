@@ -62,8 +62,8 @@ dat.working1 <- ChickWeight
 dat.working2 <- VADeaths
 
 #Viewing Dataset
-dat.working1
-dat.working2
+head(dat.working1)
+head(dat.working2)
 ```
 
 ### Try it!
@@ -149,7 +149,7 @@ In this section we will show several basic dataset commands using the PSYC200 Da
 #View Entire Data
 View(Excel.dat.working)
 
-#Top 5 & Bottom 5
+#Top 6 & Bottom 6
 head(Excel.dat.working)
 tail(Excel.dat.working)
 ```
@@ -220,7 +220,7 @@ describe.by(Excel.dat.working, Excel.dat.working$`Note Taking Modality (paper =1
 
 *Note: More information provided [here](https://www.rdocumentation.org/packages/psych/versions/2.0.12/topics/describeBy)*
 
-### Try it!!
+## Exercises
 
 1. Use the survey data set you loaded before, `survey` and write the code for finding out the summary of `height` of students.
 

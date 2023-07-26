@@ -23,10 +23,13 @@ learnr::tutorial_options(
   exercise.timelimit = 60)
 ```
 
+# What to learn here
+
+Before analyzing any data set, there has to be some prior work done in order to access the appropriate amount of information from the dataset. Most often. we require to access a single column or a few columns together from a large dataset, and not the entire dataset. In such scenarios, we should be able to know how to extract the pertinent information from out data. Hence, in this module, we will learn some basic data set operations. 
 
 ## Section One : Extracting Rows and Columns
 
-In this module, we will learn some basic data set operations.
+This section talks about how to extract rows or/and columns from a data set.
 
 - We will start this lesson by using the class dataset we used in Lesson 3.
 - Let's start by using the csv class data file.
@@ -155,6 +158,8 @@ learnr::question("How can you extract the values of first 3 variables for the fi
 ###
 
 ## Section Two : Extracting & Building Vectors / Dataframes
+
+This section is mainly focused on how to build your own vectors or data frame while working with a large dataset.
 
 ### Creating Vectors from Variables in Datasets
 
