@@ -222,6 +222,8 @@ describe.by(Excel.dat.working, Excel.dat.working$`Note Taking Modality (paper =1
 
 ## Exercises
 
+**Note:** If you feel stuck at any exercise and need some help, click on the 'hint' button for help!
+
 1. Use the survey data set you loaded before, `survey` and write the code for finding out the summary of `height` of students.
 
 ```{r ex1, exercise=TRUE, echo = -1}
