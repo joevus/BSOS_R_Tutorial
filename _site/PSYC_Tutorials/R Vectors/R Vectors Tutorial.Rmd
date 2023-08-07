@@ -258,6 +258,8 @@ Vector9
 
 ### Try yourself!
 
+**Note:** If you feel stuck at any exercise and need some help, click on the 'hint' button for help!
+
 1. Create a vector to store first 3 multiples of 2.
 
 ```{r exercise3, exercise=TRUE}

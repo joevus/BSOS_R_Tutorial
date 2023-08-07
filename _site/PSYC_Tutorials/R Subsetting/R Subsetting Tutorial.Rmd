@@ -120,6 +120,7 @@ dat.work[1:3, 1:3]
 
 ### Try it!
 
+
 1. Load the dataset "airquality" from the package "datasets" and store it as an object called *airquality*. Print the first few rows of the dataset.
 
 ```{r code_sandbox, exercise=TRUE, exercise.cap="exercise1"}
@@ -242,6 +243,8 @@ Now try doing some arithmetic by your own!
 ### Try it!
 
 Use the pre-loaded data set on airquality for this exercises.
+
+**Note:** If you feel stuck at any exercise and need some help, click on the 'hint' button for help!
 
 1. Create a vector that subtracts 78 from each of the values of the variable `Temp`. Divide this new vector by 9. Store the resulting vector as `std_temp`.
 
