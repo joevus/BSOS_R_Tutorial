@@ -437,20 +437,40 @@ grade_result(
 
 ### Submitting Work
 
-```{r submission-setup, echo=FALSE}
-submission_code <- function(UID){
-  httr::sha1_hash('data_cleaning',as.character(UID))
-}
-```
+Complete this form and submit it to record your completion of this tutorial.<br><br>
 
-Generate your submission code by putting in your UID in the function below. For example, if your UID is `2`, then your code should look like `submission_code(UID = 2)`
+<form id="completionForm">
+  <label for="first_name">First name:</label><br>
+  <input type="text" id="first_name" name="first_name" value="John"><br>
+  <label for="last_name">Last name:</label><br>
+  <input type="text" id="last_name" name="last_name" value="Doe"><br>
+  <label for="uid">UID:</label><br>
+  <input type="text" id="uid" name="uid" value="123"><br><br>
+  <input type="hidden" id="tutorial_id" name="tutorial_id" value="1">
+  <button>Submit</button>
+</form>
 
-```{r submission, exercise = TRUE, echo=FALSE}
-# Replace the number below with your UID
-submission_code(2)
-```
+<script>
+  var form = document.getElementById('completionForm');
+  form.onsubmit = function(event){
+    console.log("submitted")
+    var xhr = new XMLHttpRequest();
+    var formData = new FormData(form);
+    //open the request
+    xhr.open('POST','http://completions.joehoskisson.com/completions')
+    xhr.setRequestHeader("Content-Type", "application/json");
 
-##
+    //send the form data
+    xhr.send(JSON.stringify(Object.fromEntries(formData)));
 
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+            form.reset(); //reset form after AJAX success or do something else
+        }
+    }
+    //Fail the onsubmit to avoid page refresh.
+    return false; 
+  }
+</script>
 
 
